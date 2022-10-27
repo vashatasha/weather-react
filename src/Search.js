@@ -6,6 +6,7 @@ import Date from "./Date";
 import Kharkiv from "./Kharkiv";
 import Sky from "./Sky";
 import Weather from "./Weather";
+import Owner from "./Owner";
 
 
 export default function WeatherSearch() {
@@ -85,8 +86,10 @@ export default function WeatherSearch() {
         </ul>
       </div>
     </div>
+    <Owner />
   </div>
   </div>
+  
   
 );
 
@@ -96,6 +99,7 @@ export default function WeatherSearch() {
 <Kharkiv />
 <Sky />
 <Weather />
+<Owner />
 </div>
     )
   }
