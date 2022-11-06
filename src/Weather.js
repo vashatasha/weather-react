@@ -3,10 +3,7 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import Date from "./Date";
-// import Kharkiv from "./Kharkiv";
-// import Sky from "./Sky";
-// import Weather from "./Weather";
-
+import WeatherIcon from "./WeatherIcon";
 
 export default function Weather(props) {
   
@@ -21,10 +18,8 @@ export default function Weather(props) {
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      icon: `http://openweathermap.org/img/wn/${
-        response.data.weather[0].icon
-      }@2x.png`,
-      description: response.data.weather[0].main
+      icon: response.data.weather[0].icon,
+      description: response.data.weather[0].main,
     });
   }
 
@@ -42,8 +37,6 @@ export default function Weather(props) {
     axios.get(apiUrl).then(displayWeather);
   }
 
-  
-
   let form = (
     <form className="form" onSubmit={handleSubmit}>
       <input type="search" placeholder="Enter a city.." onChange={updateCity} />
@@ -52,7 +45,7 @@ export default function Weather(props) {
     </form>
   );
 
-  if (weather) {
+  if (weather.ready) {
     return (
       <div className="container">
         {form}
@@ -61,8 +54,9 @@ export default function Weather(props) {
         <div className="description">{weather.description}</div>
     <div className="row">
     <div className="col-3">
-    <img className="img" src={weather.icon} alt={weather.description} />
-    </div>
+      <WeatherIcon code={props.data.icon} size={52} />
+       </div>
+     
     <div className="col-4">
       <span className="temperature">{Math.round(weather.temperature)}</span>
       <span>
@@ -91,21 +85,12 @@ export default function Weather(props) {
         </ul>
       </div>
     </div>
-    
   </div>
-  </div>
-  
-  
+  </div>  
 );
 
   } else {
       search();
     return "Loading...";
-/* <Kharkiv />
-<Sky />
-<Weather />
-<Owner /> */
-
-
   }
 }
