@@ -4,7 +4,7 @@ h1 {
   font-size: 30px;
 }
 .body {
-  width: 500px;
+  width: 510px;
   border: 1px solid #885df1;
   display: block;
   margin: 30px auto;
@@ -17,22 +17,31 @@ h1 {
   padding: 5px 30px 0; 
 } 
 h5,
-h6, .date, .owner {
+h6, .date {
   margin: 10px 30px 0;
 }
-.img {
+.weatherIcon {
   margin: 10px 20px;
 }
 .temperature {
-  font-size: 70px;
+  font-size: 60px;
+  position:relative;
+  top: -6px;
 }
-.celsium {
-  font-size: 30px;
+.celsius {
+  font-size: 15px;
+  position:relative;
+  top: -38px;
+
 }
 .fahrenheit {
-  font-size: 30px;
+  font-size: 15px;
+  position:relative;
+  top: -38px;
 }
 .bold {
   font-weight: bold;
 }
-
+.owner {
+ margin: 10px 40px;
+}

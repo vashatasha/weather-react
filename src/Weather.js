@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import Date from "./Date";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function Weather(props) {
   
@@ -53,16 +54,13 @@ export default function Weather(props) {
         <div className="date"><Date /></div>
         <div className="description">{weather.description}</div>
     <div className="row">
-    <div className="col-3">
-      <WeatherIcon code={props.data.icon} size={52} />
+    <div className="weatherIcon col-2">
+    <WeatherIcon code={weather.icon} size={80} />
        </div>
      
     <div className="col-4">
-      <span className="temperature">{Math.round(weather.temperature)}</span>
-      <span>
-        <a href="/">ºC | </a>
-        <a href="/">F</a>
-      </span>
+    <WeatherTemperature celsius={weather.temperature}/>
+      
     </div>
     <div className="col-5">
       <div className="other">
