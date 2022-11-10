@@ -4,7 +4,7 @@ h1 {
   font-size: 30px;
 }
 .body {
-  width: 510px;
+  width: 650px;
   border: 1px solid #885df1;
   display: block;
   margin: 30px auto;
@@ -44,4 +44,12 @@ h6, .date {
 }
 .owner {
  margin: 10px 40px;
+}
+.WeatherForecast {
+  text-align: center;
+
+}
+.WeatherForecast-temperature-min{
+  opacity: 0.5;
+  margin-left: 5px;
 }

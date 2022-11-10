@@ -5,6 +5,7 @@ import axios from "axios";
 import Date from "./Date";
 import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
   
@@ -15,6 +16,7 @@ export default function Weather(props) {
     // setLoaded(true);
     setWeather({
       ready: true,
+      coordinates: response.data.coord,
       location: response.data.name,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
@@ -84,6 +86,7 @@ export default function Weather(props) {
       </div>
     </div>
   </div>
+  <WeatherForecast coordinates={weather.coordinates}/>
   </div>  
 );
 
